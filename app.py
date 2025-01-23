@@ -6,6 +6,10 @@ from email.mime.multipart import MIMEMultipart
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'  # Required for flash messages
 
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    return "Healthy", 200
 # Email configuration
 sender_email = "vijjijovardhan2004@gmail.com"  # Replace with your email
 sender_password = "dkil fzcp ywuf gjot"  # Replace with your app password
