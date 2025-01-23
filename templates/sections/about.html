@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Jovardhan Vijji</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffd700;
+            --secondary-color: #ffeb3b;
+            --accent-color: #ffc107;
+            --bg-dark: #ffffff;
+            --bg-light: #f5f5f5;
+            --text-light: #333333;
+            --text-muted: #666666;
+            --gradient-1: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            --gradient-2: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .about-section {
+            width: 100%;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .about-content {
+            animation: fadeInRight 1s ease;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .download-cv {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .certifications {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certifications::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-1);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .certifications:hover::before {
+            left: 0;
+        }
+
+        .certifications:hover {
+            color: white;
+            border-color: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .btn i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content" data-aos="fade-right">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    Hello! I'm Jovardhan Vijji, a passionate Full Stack Developer and Data Science enthusiast. Currently pursuing my B.Tech in Data Science at Kakaraparti Bhavanarayana College, I combine my academic knowledge with practical development experience to create innovative solutions.
+                </p>
+                <p class="about-text">
+                    With a strong foundation in both frontend and backend technologies, I specialize in creating responsive web applications and data-driven solutions. My expertise includes Python, JavaScript, and various data visualization tools, allowing me to bridge the gap between data science and web development.
+                </p>
+                <div class="button-group">
+                    <a href="/static/resume/VIJJI JOVARDHAN.pdf" class="btn download-cv">
+                        Download CV <i class="fas fa-download"></i>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/108F_Fhi0sE2Cq0Wl7qf-NHO3zFyT3Hxk" class="btn certifications">
+                        Certifications <i class="fas fa-certificate"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <img src="/static/image/5J0A1075 (1).jpg" alt="Jovardhan Vijji">
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

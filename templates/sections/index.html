@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Jovardhan Vijji</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffd700;
+            --secondary-color: #ffeb3b;
+            --accent-color: #ffc107;
+            --bg-dark: #ffffff;
+            --bg-light: #f5f5f5;
+            --text-light: #333333;
+            --text-muted: #666666;
+            --gradient-1: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            --gradient-2: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .home-hero-section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #home-particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: var(--bg-dark);
+        }
+
+        .home-hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .home-hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            animation: fadeInUp 1s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .home-hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            animation: fadeInUp 1s ease 0.2s;
+            animation-fill-mode: both;
+            position: relative;
+            z-index: 10;
+        }
+
+        .home-hero-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            color: var(--text-muted);
+            animation: fadeInUp 1s ease 0.4s;
+            animation-fill-mode: both;
+            position: relative;
+            z-index: 10;
+        }
+
+        .home-hero-buttons {
+            animation: fadeInUp 1s ease 0.6s;
+            animation-fill-mode: both;
+            position: relative;
+            z-index: 10;
+        }
+
+        .home-btn-primary {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient-1);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .home-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .home-btn-primary i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .home-btn-primary:hover i {
+            transform: translateX(5px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .home-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .home-hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .home-hero-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="home-hero-section">
+        <div id="home-particles-js"></div>
+        <div class="home-hero-content">
+            <h1 class="home-hero-title">Hi, I'm Jovardhan Vijji</h1>
+            <h2 class="home-hero-subtitle">Full Stack Developer</h2>
+            <p class="home-hero-text">
+                I create innovative web solutions and bring ideas to life through code.
+                Passionate about building seamless user experiences and robust applications.
+            </p>
+            <div class="home-hero-buttons">
+                <a href="#projects" class="home-btn-primary">
+                    View My Work <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('home-particles-js', {
+            particles: {
+                number: {
+                    value: 120,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#ffd700'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.8,
+                    random: false
+                },
+                size: {
+                    value: 4,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffd700',
+                    opacity: 0.6,
+                    width: 1.5
+                },
+                move: {
+                    enable: true,
+                    speed: 5,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    repulse: {
+                        distance: 150,
+                        duration: 0.4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>

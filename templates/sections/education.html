@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Jovardhan Vijji</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffd700;
+            --secondary-color: #ffeb3b;
+            --accent-color: #ffc107;
+            --bg-dark: #ffffff;
+            --bg-light: #f5f5f5;
+            --text-light: #333333;
+            --text-muted: #666666;
+            --gradient-1: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            --gradient-2: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .education-section {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--text-light);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .education-container::before {
+            display: none;
+        }
+
+        .education-item {
+            width: 100%;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .education-item::before {
+            display: none;
+        }
+
+        .education-year {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-degree {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-school {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .education-container::before {
+                left: 20px;
+            }
+
+            .education-item::before {
+                left: 20px;
+                transform: none;
+            }
+
+            .education-item {
+                padding-left: 60px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="education-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Education</h2>
+            </div>
+            <div class="education-container">
+                <div class="education-item" data-aos="fade-up">
+                    <div class="education-year">2022 - 2025</div>
+                    <div class="education-degree">Bachelor of Science in Data Science</div>
+                    <div class="education-school">Kakaraparti Bhavanarayana College</div>
+                    <div class="education-details">Percentage: 80%</div>
+                </div>
+
+                <div class="education-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="education-year">2019 - 2021</div>
+                    <div class="education-degree">Intermediate Education (MPC)</div>
+                    <div class="education-school">Kakaraparti Bhavanarayana College</div>
+                    <div class="education-details">Percentage: 67.9%</div>
+                </div>
+
+                <div class="education-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="education-year">2018 - 2019</div>
+                    <div class="education-degree">Secondary School Certificate</div>
+                    <div class="education-school">S.T.R. High School</div>
+                    <div class="education-details">GPA: 8.3/10</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
