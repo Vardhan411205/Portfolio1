@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -282,18 +283,155 @@
 
         @media (max-width: 768px) {
             .contact-section {
-                padding: 4rem 2rem;
+                padding: 2rem 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
             }
 
             .contact-container {
                 grid-template-columns: 1fr;
                 padding: 0;
-                gap: 3rem;
+                gap: 2rem;
+            }
+
+            .info-item {
+                padding: 1.2rem;
+                gap: 1rem;
+            }
+
+            .info-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .info-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .info-content p {
+                font-size: 0.9rem;
+            }
+
+            .social-links {
+                justify-content: center;
+                margin-top: 0.5rem;
+            }
+
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+                margin: 0 0.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-control {
+                padding: 0.7rem;
+                font-size: 0.95rem;
+            }
+
+            textarea.form-control {
+                min-height: 120px;
+            }
+
+            .btn-submit {
+                padding: 0.875rem;
+                font-size: 0.95rem;
+            }
+
+            /* Footer mobile styles */
+            .footer {
+                padding: 2rem 0 0;
+                margin-top: 2rem;
             }
 
             .footer-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+                padding: 0 1.5rem;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-section p {
+                font-size: 0.9rem;
+            }
+
+            .footer-social {
+                justify-content: center;
+                font-size: 1.5rem;
+            }
+
+            .footer-links {
+                text-align: center;
+            }
+
+            .footer-links li {
+                margin-bottom: 0.6rem;
+            }
+
+            .footer-bottom {
+                margin-top: 2rem;
+                padding: 1.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Add smaller phone breakpoint */
+        @media (max-width: 480px) {
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+
+            .contact-container {
+                gap: 1.5rem;
+            }
+
+            .info-item {
+                padding: 1rem;
+            }
+
+            .info-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .contact-form {
+                padding: 1.25rem;
+                margin: 0 0.25rem;
+            }
+
+            .form-group label {
+                font-size: 0.9rem;
+            }
+
+            .form-control {
+                padding: 0.6rem;
+                font-size: 0.9rem;
+            }
+
+            .footer-container {
+                padding: 0 1rem;
             }
         }
 
@@ -303,6 +441,7 @@
                 transform: translateY(-20px);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -314,6 +453,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="main-wrapper">
         <section class="contact-section">
@@ -364,30 +504,30 @@
                     </div>
                     <div class="contact-form" data-aos="fade-left">
                         {% with messages = get_flashed_messages(with_categories=true) %}
-                            {% if messages %}
-                                {% for category, message in messages %}
-                                    <div class="alert alert-{{ category }}">
-                                        {{ message }}
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
+                        {% if messages %}
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
                         {% endwith %}
-                        
+
                         <form method="POST" action="{{ url_for('home') }}">
                             <div class="form-group">
                                 <label for="name">👤 Name</label>
-                                <input type="text" id="name" name="name" class="form-control" 
-                                       required placeholder="Enter your name">
+                                <input type="text" id="name" name="name" class="form-control" required
+                                    placeholder="Enter your name">
                             </div>
                             <div class="form-group">
                                 <label for="email">📧 Email</label>
-                                <input type="email" id="email" name="email" class="form-control" 
-                                       required placeholder="Enter your email">
+                                <input type="email" id="email" name="email" class="form-control" required
+                                    placeholder="Enter your email">
                             </div>
                             <div class="form-group">
                                 <label for="message">💭 Message</label>
-                                <textarea id="message" name="message" class="form-control" 
-                                          required placeholder="Type your message here..."></textarea>
+                                <textarea id="message" name="message" class="form-control" required
+                                    placeholder="Type your message here..."></textarea>
                             </div>
                             <button type="submit" class="btn-submit">
                                 Send Message 🚀
@@ -402,7 +542,8 @@
             <div class="footer-container">
                 <div class="footer-section">
                     <h3>🚀 About Me</h3>
-                    <p>Full Stack Developer passionate about creating innovative web solutions and bringing ideas to life through code.</p>
+                    <p>Full Stack Developer passionate about creating innovative web solutions and bringing ideas to
+                        life through code.</p>
                     <div class="footer-social">
                         <a href="https://linkedin.com/in/jovardhan-vijji" target="_blank">
                             <i class="fab fa-linkedin"></i>
@@ -447,4 +588,5 @@
         });
     </script>
 </body>
+
 </html>

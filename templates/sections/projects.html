@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -231,6 +232,7 @@
                 opacity: 0;
                 transform: translateX(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -241,24 +243,89 @@
             animation: slideIn 0.5s ease forwards;
         }
 
-        /* Responsive Styles */
         @media (max-width: 768px) {
             .portfolio-info {
+                margin: 2rem 0.5rem;
+                /* Increased top margin for number spacing */
                 text-align: center;
-                padding: 2rem 1rem;
+                padding: 2rem 1rem 1.5rem;
+                /* Increased top padding */
+                border-radius: 12px;
+                position: relative;
+                /* Ensure proper positioning context */
+            }
+
+            .portfolio-info h3 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+                /* Add space for project number */
+                margin-bottom: 0.75rem;
+                padding-top: 1rem;
+                /* Additional space from number */
+            }
+
+            .portfolio-info p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
             }
 
             .portfolio-buttons {
                 justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+
+            .portfolio-buttons a {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+                min-width: 120px;
             }
 
             .project-number {
-                font-size: 3rem;
-                top: -20px;
+                font-size: 2.5rem;
+                position: absolute;
+                top: -1rem;
+                /* Adjusted positioning */
+                right: 1rem;
+                padding: 0.5rem;
+                opacity: 0.8;
+                border-radius: 8px;
+                background-color: var(--bg-dark);
+                /* Ensure number is visible */
+                z-index: 1;
+                /* Keep number above other content */
+            }
+        }
+
+        /* Smaller phone breakpoint */
+        @media (max-width: 480px) {
+            .portfolio-info {
+                margin: 2.5rem 0.25rem 1rem;
+                /* Increased top margin further */
+                padding: 2.5rem 0.75rem 1.25rem;
+                /* Increased top padding */
+            }
+
+            .portfolio-info h3 {
+                font-size: 1.25rem;
+                margin-top: 1rem;
+            }
+
+            .portfolio-info p {
+                font-size: 0.9rem;
+            }
+
+            .project-number {
+                font-size: 2rem;
+                top: -0.75rem;
+                right: 0.75rem;
+                padding: 0.4rem;
             }
         }
     </style>
 </head>
+
 <body>
     <section id="portfolio" class="section-padding">
         <div class="container">
@@ -273,7 +340,8 @@
                         <div class="col-lg-6 portfolio-info">
                             <span class="project-number">01</span>
                             <h3>3D E-Commerce Platform</h3>
-                            <p>An innovative e-commerce platform with interactive 3D product visualization and customization options.</p>
+                            <p>An innovative e-commerce platform with interactive 3D product visualization and
+                                customization options.</p>
                             <div class="tech-stack">
                                 <span class="badge">HTML</span>
                                 <span class="badge">CSS</span>
@@ -281,8 +349,10 @@
                                 <span class="badge">Model Viewer</span>
                             </div>
                             <div class="portfolio-buttons">
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project="1">View Details</button>
-                                <a href="https://vardhan411205.github.io/E-Commerce/" class="btn btn-outline-primary">Live Demo</a>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                    data-project="1">View Details</button>
+                                <a href="https://vardhan411205.github.io/E-Commerce/"
+                                    class="btn btn-outline-primary">Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -297,15 +367,18 @@
                         <div class="col-lg-6 portfolio-info">
                             <span class="project-number">02</span>
                             <h3>NASA Chatbot</h3>
-                            <p>An intelligent chatbot providing real-time information about NASA missions and space exploration.</p>
+                            <p>An intelligent chatbot providing real-time information about NASA missions and space
+                                exploration.</p>
                             <div class="tech-stack">
                                 <span class="badge">Python</span>
                                 <span class="badge">Rasa</span>
                                 <span class="badge">NASA API</span>
                             </div>
                             <div class="portfolio-buttons">
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project="2">View Details</button>
-                                <a href="https://vardhan411205.github.io/Aaru/" class="btn btn-outline-primary">Live Demo</a>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                    data-project="2">View Details</button>
+                                <a href="https://vardhan411205.github.io/Aaru/" class="btn btn-outline-primary">Live
+                                    Demo</a>
                             </div>
                         </div>
                     </div>
@@ -320,15 +393,18 @@
                         <div class="col-lg-6 portfolio-info">
                             <span class="project-number">03</span>
                             <h3>Movie Booking System</h3>
-                            <p>A comprehensive movie ticket booking platform with real-time seat selection and secure payments.</p>
+                            <p>A comprehensive movie ticket booking platform with real-time seat selection and secure
+                                payments.</p>
                             <div class="tech-stack">
                                 <span class="badge">Html</span>
                                 <span class="badge">Css</span>
                                 <span class="badge">Java Script</span>
                             </div>
                             <div class="portfolio-buttons">
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-project="3">View Details</button>
-                                <a href="https://vardhan411205.github.io/movie_ticket/" class="btn btn-outline-primary">Live Demo</a>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                    data-project="3">View Details</button>
+                                <a href="https://vardhan411205.github.io/movie_ticket/"
+                                    class="btn btn-outline-primary">Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -363,12 +439,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const slides = document.querySelectorAll('.portfolio-slide');
             const dotsContainer = document.querySelector('.portfolio-dots');
             const prevBtn = document.querySelector('.nav-prev');
             const nextBtn = document.querySelector('.nav-next');
-            
+
             let currentSlide = 0;
             let slideInterval;
 
@@ -509,14 +585,14 @@
 
             // Modal handling
             const portfolioModal = document.getElementById('portfolioModal');
-            portfolioModal.addEventListener('show.bs.modal', function(event) {
+            portfolioModal.addEventListener('show.bs.modal', function (event) {
                 const button = event.relatedTarget;
                 const projectId = button.getAttribute('data-project');
                 const project = projectDetails[projectId];
-                
+
                 const modalTitle = this.querySelector('.modal-title');
                 const modalBody = this.querySelector('.modal-body');
-                
+
                 modalTitle.textContent = project.title;
                 modalBody.innerHTML = project.description;
             });
@@ -547,7 +623,7 @@
                 slide.addEventListener('mouseenter', () => {
                     clearInterval(slideInterval);
                 });
-                
+
                 slide.addEventListener('mouseleave', () => {
                     startSlideshow();
                 });
@@ -555,4 +631,5 @@
         });
     </script>
 </body>
+
 </html>
