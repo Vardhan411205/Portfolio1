@@ -49,15 +49,14 @@
 
         .skills-section {
             position: relative;
-            z-index: 1;
+            padding: 4rem 0;
             width: 100%;
-            min-height: 100vh;
-            padding: 4rem 2rem;
+            overflow: hidden;
         }
 
         .container {
-            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
             width: 100%;
         }
 
@@ -88,6 +87,7 @@
 
         .skills-category {
             margin-bottom: 4rem;
+            width: 100%;
         }
 
         .category-title {
@@ -112,9 +112,11 @@
 
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 0 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 0;
+            width: 100%;
+            margin: 0;
         }
 
         .skill-card {
@@ -125,6 +127,8 @@
             overflow: hidden;
             transition: var(--transition);
             box-shadow: var(--card-shadow);
+            width: 100%;
+            margin: 0;
         }
 
         .skill-card:hover {
@@ -157,6 +161,15 @@
 
         .skill-progress {
             margin-top: 1rem;
+            position: relative;
+        }
+
+        .skill-percentage {
+            position: absolute;
+            right: 0;
+            top: -20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
         .progress-bar {
@@ -182,18 +195,147 @@
             text-align: center;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .skills-container {
-                grid-template-columns: 1fr;
-                padding: 0 1rem;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+                padding: 0;
+            }
+
+            .skill-card {
+                padding: 1.5rem;
+                width: 100%;
+            }
+
+            .skill-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .skill-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .skills-section {
+                padding: 2rem 1rem;
             }
 
             .section-title h2 {
                 font-size: 2rem;
             }
 
+            .skills-category {
+                margin-bottom: 2rem;
+                padding: 1rem;
+            }
+
             .category-title {
                 font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .skill-item {
+                margin-bottom: 1rem;
+                padding: 0.75rem;
+            }
+
+            .skill-name {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .progress-bar {
+                height: 12px;
+            }
+
+            .progress-fill {
+                height: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .skills-section {
+                padding: 2rem 0;
+                width: 100vw;
+            }
+
+            .container {
+                padding: 0;
+                width: 100vw;
+                margin: 0;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.3rem;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            .skill-card {
+                padding: 0.5rem;
+                margin: 0;
+                border-radius: 6px;
+            }
+
+            .skill-icon {
+                width: 35px;
+                height: 35px;
+                margin-bottom: 0.5rem;
+            }
+
+            .skill-icon i {
+                font-size: 1rem;
+            }
+
+            .skill-card h3 {
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .skill-percentage {
+                font-size: 0.7rem;
+                top: -15px;
+            }
+
+            .progress-bar {
+                height: 4px;
+                margin-bottom: 0.3rem;
+            }
+
+            .progress-fill {
+                height: 4px;
+            }
+
+            .category-title {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .skills-category {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .skills-container {
+                gap: 0.2rem;
+            }
+
+            .skill-card {
+                padding: 0.4rem;
+            }
+
+            .skill-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .skill-card h3 {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -217,10 +359,10 @@
                         </div>
                         <h3>Python</h3>
                         <div class="skill-progress">
+                            <span class="skill-percentage">90%</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" data-progress="90"></div>
                             </div>
-                            <p>Advanced</p>
                         </div>
                     </div>
 
@@ -230,10 +372,10 @@
                         </div>
                         <h3>JavaScript</h3>
                         <div class="skill-progress">
+                            <span class="skill-percentage">65%</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" data-progress="65"></div>
                             </div>
-                            <p>Intermediate</p>
                         </div>
                     </div>
 
@@ -243,10 +385,10 @@
                         </div>
                         <h3>C</h3>
                         <div class="skill-progress">
+                            <span class="skill-percentage">75%</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" data-progress="75"></div>
                             </div>
-                            <p>Intermediate</p>
                         </div>
                     </div>
                 </div>
@@ -262,10 +404,10 @@
                         </div>
                         <h3>Tableau</h3>
                         <div class="skill-progress">
+                            <span class="skill-percentage">85%</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" data-progress="85"></div>
                             </div>
-                            <p>Advanced</p>
                         </div>
                     </div>
 
@@ -275,10 +417,10 @@
                         </div>
                         <h3>Power BI</h3>
                         <div class="skill-progress">
+                            <span class="skill-percentage">80%</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" data-progress="80"></div>
                             </div>
-                            <p>Advanced</p>
                         </div>
                     </div>
 
@@ -288,10 +430,10 @@
                         </div>
                         <h3>Excel</h3>
                         <div class="skill-progress">
+                            <span class="skill-percentage">85%</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" data-progress="85"></div>
                             </div>
-                            <p>Advanced</p>
                         </div>
                     </div>
                 </div>
@@ -307,10 +449,10 @@
                         </div>
                         <h3>Git</h3>
                         <div class="skill-progress">
+                            <span class="skill-percentage">85%</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" data-progress="85"></div>
                             </div>
-                            <p>Advanced</p>
                         </div>
                     </div>
 
@@ -320,10 +462,10 @@
                         </div>
                         <h3>SQL</h3>
                         <div class="skill-progress">
+                            <span class="skill-percentage">80%</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" data-progress="80"></div>
                             </div>
-                            <p>Advanced</p>
                         </div>
                     </div>
 
@@ -333,10 +475,10 @@
                         </div>
                         <h3>PhotoShop</h3>
                         <div class="skill-progress">
+                            <span class="skill-percentage">60%</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" data-progress="60"></div>
                             </div>
-                            <p>Intermediate</p>
                         </div>
                     </div>
                 </div>

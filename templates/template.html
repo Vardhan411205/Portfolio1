@@ -163,16 +163,136 @@
 
             .nav-item {
                 flex: 1;
-                /* Fixed the incomplete 'flex' property */
                 padding: 0.5rem;
                 justify-content: center;
-                display: flex;
+                background: none;
+                flex-direction: column;
                 align-items: center;
             }
 
             .nav-item i {
                 min-width: auto;
-                margin: 0;
+                font-size: 1.4rem;
+            }
+
+            .nav-item span {
+                display: none !important;
+                opacity: 0;
+            }
+
+            .nav-item:hover span {
+                display: none !important;
+                opacity: 0;
+            }
+
+            .content-section {
+                margin-left: 0;
+                width: 100vw;
+                margin-bottom: 60px;
+            }
+
+            .sidebar:hover+.content-section {
+                margin-left: 0;
+                width: 100vw;
+            }
+        }
+
+        .navbar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 80px;
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2rem;
+            transition: var(--transition);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            background: white;
+            overflow: hidden;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+            width: 100%;
+            position: relative;
+        }
+
+        .nav-item i {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            min-width: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item.active i {
+            color: var(--accent-color);
+        }
+
+        .nav-item span {
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .nav-item:hover i {
+            transform: scale(1.1);
+        }
+
+        .nav-item:hover span {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Content margin adjustment */
+        .content-section {
+            margin-left: 80px;
+            width: calc(100% - 80px);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                top: auto;
+                bottom: 0;
+                width: 100%;
+                height: 65px;
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 0.5rem 0;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+                overflow: visible;
+            }
+
+            .nav-item {
+                flex-direction: column;
+                width: auto;
+                padding: 0.3rem;
+                background: none;
+            }
+
+            .nav-item:hover {
+                background: none;
+            }
+
+            .nav-item i {
+                min-width: auto;
             }
 
             .nav-item span {
@@ -181,14 +301,8 @@
 
             .content-section {
                 margin-left: 0;
-                width: 100vw;
-                margin-bottom: 60px;
-                /* Add space for fixed bottom nav */
-            }
-
-            .sidebar:hover+.content-section {
-                margin-left: 0;
-                width: 100vw;
+                width: 100%;
+                margin-bottom: 65px;
             }
         }
     </style>

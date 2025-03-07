@@ -245,71 +245,21 @@
         }
 
         @media (max-width: 768px) {
-            .portfolio-info {
-                margin: 2rem 0.5rem;
-                /* Increased top margin for number spacing */
-                text-align: center;
-                padding: 2rem 1rem 1.5rem;
-                /* Increased top padding */
-                border-radius: 12px;
-                position: relative;
-                /* Ensure proper positioning context */
+            .portfolio-slide {
+                padding: 1rem;
+            }
+
+            .portfolio-image {
+                margin-bottom: 2rem;
+            }
+
+            .project-number {
+                font-size: 3rem;
+                top: -1.5rem;
             }
 
             .portfolio-info h3 {
                 font-size: 1.5rem;
-                margin-top: 1.5rem;
-                /* Add space for project number */
-                margin-bottom: 0.75rem;
-                padding-top: 1rem;
-                /* Additional space from number */
-            }
-
-            .portfolio-info p {
-                font-size: 0.95rem;
-                line-height: 1.5;
-                margin-bottom: 1rem;
-            }
-
-            .portfolio-buttons {
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 0.75rem;
-            }
-
-            .portfolio-buttons a {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.9rem;
-                min-width: 120px;
-            }
-
-            .project-number {
-                font-size: 2.5rem;
-                position: absolute;
-                top: -1rem;
-                /* Adjusted positioning */
-                right: 1rem;
-                padding: 0.5rem;
-                opacity: 0.8;
-                border-radius: 8px;
-                background-color: var(--bg-dark);
-                /* Ensure number is visible */
-                z-index: 1;
-                /* Keep number above other content */
-            }
-        }
-
-        /* Smaller phone breakpoint */
-        @media (max-width: 480px) {
-            .portfolio-info {
-                margin: 2.5rem 0.25rem 1rem;
-                /* Increased top margin further */
-                padding: 2.5rem 0.75rem 1.25rem;
-                /* Increased top padding */
-            }
-
-            .portfolio-info h3 {
-                font-size: 1.25rem;
                 margin-top: 1rem;
             }
 
@@ -317,11 +267,62 @@
                 font-size: 0.9rem;
             }
 
-            .project-number {
+            .tech-stack {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .badge {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .portfolio-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .portfolio-buttons .btn {
+                width: 100%;
+            }
+
+            .portfolio-navigation {
+                padding: 1rem 0;
+            }
+
+            .nav-prev, .nav-next {
+                padding: 0.5rem;
+                font-size: 1rem;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+                margin: 0 4px;
+            }
+
+            .modal-dialog {
+                margin: 1rem;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
                 font-size: 2rem;
-                top: -0.75rem;
-                right: 0.75rem;
-                padding: 0.4rem;
+                margin-bottom: 2rem;
+            }
+
+            .portfolio-slide {
+                padding: 0.5rem;
+            }
+
+            .project-number {
+                font-size: 2.5rem;
+                top: -1rem;
             }
         }
     </style>
@@ -336,7 +337,7 @@
                 <div class="portfolio-slide active">
                     <div class="row align-items-center">
                         <div class="col-lg-6 portfolio-image">
-                            <img src="/static/image/Screenshot 2025-01-22 145628.png" alt="3D E-Commerce Platform">
+                            <img src="/static/image/e-commerce.png" alt="3D E-Commerce Platform">
                         </div>
                         <div class="col-lg-6 portfolio-info">
                             <span class="project-number">01</span>
@@ -359,27 +360,32 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="portfolio-slide">
+                <!-- Project 2 (Mr. Foody and Ms. Foody) -->
+                <div class="portfolio-slide" data-aos="fade-up">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 portfolio-image">
-                            <img src="/static/image/Screenshot 2025-01-22 145723.png" alt="NASA Chatbot">
-                        </div>
-                        <div class="col-lg-6 portfolio-info">
-                            <span class="project-number">02</span>
-                            <h3>NASA Chatbot</h3>
-                            <p>An intelligent chatbot providing real-time information about NASA missions and space
-                                exploration.</p>
-                            <div class="tech-stack">
-                                <span class="badge">Python</span>
-                                <span class="badge">Rasa</span>
-                                <span class="badge">NASA API</span>
+                        <div class="col-lg-6">
+                            <div class="portfolio-image">
+                                <img src="/static/image/food.png" alt="Mr. Foody and Ms. Foody">
                             </div>
-                            <div class="portfolio-buttons">
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal"
-                                    data-project="2">View Details</button>
-                                <a href="https://vardhan411205.github.io/Aaru/" class="btn btn-outline-primary">Live
-                                    Demo</a>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="portfolio-info">
+                                <div class="project-number">02</div>
+                                <h3>Mr. Foody & Ms. Foody</h3>
+                                <p>A comprehensive restaurant platform offering food ordering, dining table reservations, and venue hall bookings with integrated location services using OpenStreetMap.</p>
+                                <div class="tech-stack">
+                                    <span class="badge">HTML5</span>
+                                    <span class="badge">CSS3</span>
+                                    <span class="badge">JavaScript</span>
+                                    <span class="badge">Django</span>
+                                    <span class="badge">Leaflet</span>
+                                    <span class="badge">OpenStreetMap</span>
+                                </div>
+                                <div class="portfolio-buttons">
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                        data-project="2">View Details</button>
+                                    <a href="https://mr-foody-ms-foody.onrender.com/signup/" class="btn btn-outline-primary">Live Demo</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -389,7 +395,7 @@
                 <div class="portfolio-slide">
                     <div class="row align-items-center">
                         <div class="col-lg-6 portfolio-image">
-                            <img src="/static/image/Screenshot 2025-01-22 145547.png" alt="Movie Booking System">
+                            <img src="/static/image/movie.png" alt="Movie Booking System">
                         </div>
                         <div class="col-lg-6 portfolio-info">
                             <span class="project-number">03</span>
@@ -415,7 +421,7 @@
                 <div class="portfolio-slide">
                     <div class="row align-items-center">
                         <div class="col-lg-6 portfolio-image">
-                            <img src="/static/image/Screenshot 2025-01-24 205603.png" alt="Scientific Calculator">
+                            <img src="/static/image/calci.png" alt="Scientific Calculator">
                         </div>
                         <div class="col-lg-6 portfolio-info">
                             <span class="project-number">04</span>
@@ -442,7 +448,7 @@
                 <div class="portfolio-slide">
                     <div class="row align-items-center">
                         <div class="col-lg-6 portfolio-image">
-                            <img src="/static/image/Screenshot 2025-01-24 205750.png" alt="Image Gallery">
+                            <img src="/static/image/image.png" alt="Image Gallery">
                         </div>
                         <div class="col-lg-6 portfolio-info">
                             <span class="project-number">05</span>
@@ -460,6 +466,57 @@
                                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal"
                                     data-project="5">View Details</button>
                                 <a href="https://vardhan411205.github.io/image_galary/" class="btn btn-outline-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 (NASA Chatbot) -->
+                <div class="portfolio-slide">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 portfolio-image">
+                            <img src="/static/image/nasa.png" alt="NASA Chatbot">
+                        </div>
+                        <div class="col-lg-6 portfolio-info">
+                            <span class="project-number">06</span>
+                            <h3>NASA Chatbot</h3>
+                            <p>An intelligent chatbot providing real-time information about NASA missions and space exploration.</p>
+                            <div class="tech-stack">
+                                <span class="badge">Python</span>
+                                <span class="badge">Rasa</span>
+                                <span class="badge">NASA API</span>
+                            </div>
+                            <div class="portfolio-buttons">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                    data-project="6">View Details</button>
+                                <a href="https://vardhan411205.github.io/Aaru/" class="btn btn-outline-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 (Food Recipe Website) -->
+                <div class="portfolio-slide">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 portfolio-image">
+                            <img src="/static/image/food_recipe.png" alt="Food Recipe Website">
+                        </div>
+                        <div class="col-lg-6 portfolio-info">
+                            <span class="project-number">07</span>
+                            <h3>Food Recipe Website</h3>
+                            <p>A dynamic food recipe website that helps users discover and share delicious recipes, powered by API Ninja's recipe database and Pollination API for recipe images.</p>
+                            <div class="tech-stack">
+                                <span class="badge">HTML5</span>
+                                <span class="badge">CSS3</span>
+                                <span class="badge">JavaScript</span>
+                                <span class="badge">Flask</span>
+                                <span class="badge">API Ninja</span>
+                                <span class="badge">Pollination API</span>
+                            </div>
+                            <div class="portfolio-buttons">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                                    data-project="7">View Details</button>
+                                <a href="https://foodrecipe-m8wo.onrender.com/" class="btn btn-outline-primary">Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -593,25 +650,29 @@
                         </ul>`
                 },
                 2: {
-                    title: "NASA Chatbot",
+                    title: "Mr. Foody & Ms. Foody",
                     description: `
                         <h4>Project Overview</h4>
-                        <p>An intelligent chatbot providing information about NASA missions and space exploration.</p>
+                        <p>A full-featured restaurant management system that combines food ordering, table reservations, and venue booking functionalities with integrated location services.</p>
                         
                         <h4>Key Features</h4>
                         <ul>
-                            <li>Real-time NASA data integration</li>
-                            <li>Natural language processing</li>
-                            <li>Interactive conversation flow</li>
-                            <li>Educational content delivery</li>
+                            <li>Online food ordering system with real-time tracking</li>
+                            <li>Interactive map-based restaurant location</li>
+                            <li>Real-time dining table reservation system</li>
+                            <li>Venue hall booking for events</li>
+                            <li>Location-based restaurant search</li>
+                            <li>User authentication and profile management</li>
                         </ul>
                         
                         <h4>Technical Implementation</h4>
                         <ul>
-                            <li>Python NLP libraries</li>
-                            <li>NASA Open APIs</li>
-                            <li>Machine Learning algorithms</li>
-                            <li>Real-time data processing</li>
+                            <li>Django backend for robust server-side operations</li>
+                            <li>Leaflet.js for interactive maps</li>
+                            <li>OpenStreetMap integration for location services</li>
+                            <li>Custom authentication system</li>
+                            <li>Real-time booking management</li>
+                            <li>Responsive design for all devices</li>
                         </ul>`
                 },
                 3: {
@@ -679,6 +740,54 @@
             <li>Interactive UI elements</li>
             <li>Mobile-responsive design</li>
         </ul>`
+                },
+                6: {
+                    title: "NASA Chatbot",
+                    description: `
+                        <h4>Project Overview</h4>
+                        <p>An intelligent chatbot providing real-time information about NASA missions and space exploration.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Real-time NASA data integration</li>
+                            <li>Natural language processing</li>
+                            <li>Interactive conversation flow</li>
+                            <li>Educational content delivery</li>
+                        </ul>
+                        
+                        <h4>Technical Implementation</h4>
+                        <ul>
+                            <li>Python NLP libraries</li>
+                            <li>NASA Open APIs</li>
+                            <li>Machine Learning algorithms</li>
+                            <li>Real-time data processing</li>
+                        </ul>`
+                },
+                7: {
+                    title: "Food Recipe Website",
+                    description: `
+                        <h4>Project Overview</h4>
+                        <p>A modern recipe discovery platform that leverages powerful APIs to provide users with a rich collection of recipes and high-quality food images.</p>
+                        
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Real-time recipe search using API Ninja's database</li>
+                            <li>High-quality recipe images from Pollination API</li>
+                            <li>Detailed recipe instructions and ingredients</li>
+                            <li>Category-based recipe filtering</li>
+                            <li>Responsive and intuitive user interface</li>
+                            <li>Flask-powered backend for API integration</li>
+                        </ul>
+                        
+                        <h4>Technical Implementation</h4>
+                        <ul>
+                            <li>Flask backend for API integration and routing</li>
+                            <li>API Ninja integration for recipe data</li>
+                            <li>Pollination API for recipe images</li>
+                            <li>Asynchronous API calls for better performance</li>
+                            <li>Responsive design with CSS3</li>
+                            <li>Interactive UI with JavaScript</li>
+                        </ul>`
                 }
             };
 
